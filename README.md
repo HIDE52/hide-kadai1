@@ -109,7 +109,3 @@ phpMyAdmin (DB確認ツール)：http://localhost:8080/
 ## ER図
 
 ![ER図](ER.drawio.png)
-
-```
-
-```
