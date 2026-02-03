@@ -55,8 +55,8 @@ cp .env.example .env
 
 .env ファイルを開き、以下の項目をdocker-compose.yml の設定に合わせて 書き換えて保存してください
 
-``
-envファイル
+```
+.envファイル
 
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -64,16 +64,14 @@ DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
-
 ```
 
 ④ セキュリティに必要な「鍵」を作ります。
-```
 
+```
 PHPコンテナ上
 
 php artisan key:generate
-
 ```
 
 3⃣ データベースの構築
@@ -81,23 +79,18 @@ php artisan key:generate
 ⑥ データベースにテーブルを作成します。
 
 ```
-
 PHPコンテナ上
 
 php artisan migrate
-
 ```
 
 ⑦ 初期データ（テストデータ）を登録します。
 
 ```
-
 PHPコンテナ上
 
 php artisan db:seed
-
 ```
-
 
 ## 使用技術(実行環境)
 
@@ -116,4 +109,7 @@ phpMyAdmin (DB確認ツール)：http://localhost:8080/
 ## ER図
 
 ![ER図](ER.drawio.png)
+
+```
+
 ```
