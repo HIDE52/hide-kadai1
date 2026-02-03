@@ -6,9 +6,9 @@ FashionablyLate
 1⃣　Dockerビルド  
   
 ① アプリケーションを作成するために、開発環境を GitHub からクローンします。
-```
+  
 コマンドライン上
-
+```
 git clone git@github.com:HIDE52/hide-kadai1.git
 mv hide-kadai1 FashionablyLate
 ```
