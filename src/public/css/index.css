@@ -1,0 +1,170 @@
+.FashionablyLate__content {
+    margin: 0 auto;
+    padding: 60px 15px;
+    max-width: 1230px;
+    background-color: #fff;
+}
+
+.FashionablyLate__heading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+A .FashionablyLate__heading h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 850px;
+}
+
+.form__group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form__group-title {
+    width: 30%;
+    min-width: 200px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.form__label--required {
+    margin-left: 5px;
+    padding: 4px 6px;
+    border-radius: 3px;
+    background: #fafafa;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.form__group-content {
+    width: 70%;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+    font-size: 14px;
+}
+
+.name-inputs,
+.tel-inputs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.name-inputs input {
+    width: calc(50% - 10px);
+}
+
+.tel-inputs input {
+    width: 30%;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.form__input--radio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 40px;
+}
+
+.form__input--radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.form__input--radio label {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.form__input--text input,
+.form__input--textarea textarea {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.form__input--select select {
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+}
+
+.form__input--select {
+    position: relative;
+    max-width: 400px;
+}
+
+.form__input--select select {
+    appearance: none;
+    width: 100%;
+    padding-right: 40px;
+}
+
+.form__input--select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+    pointer-events: none;
+}
+
+.form__input--select select:invalid,
+.form__input--select select:has(option[value=""]:checked) {
+    color: #aaa;
+}
+
+
+.form__input--text input {
+    height: 40px;
+}
+
+.form__input--textarea textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+.form__button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}

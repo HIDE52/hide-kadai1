@@ -1,0 +1,57 @@
+.header {
+    background: #000;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+
+.header-left,
+.header-center,
+.header-right {
+    flex: 1;
+    /* 1:1:1の比率で幅を分け合う */
+}
+
+.header-center {
+    text-align: center;
+    /* 中身のロゴを中央寄せ */
+}
+
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    /* 中身のメニューを右寄せ */
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-nav__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-nav__button {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
