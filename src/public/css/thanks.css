@@ -1,0 +1,41 @@
+.thanks__content {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thanks__back {
+    position: absolute;
+    color: #f4f4f4;
+    font-size: 300px;
+    font-weight: bold;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.thanks__message {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.thanks__heading h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.thanks__button-link {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.thanks__button-link:hover {
+    background-color: #555;
+}

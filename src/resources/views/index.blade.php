@@ -9,7 +9,7 @@
     <div class="FashionablyLate__heading">
         <h2>お問い合わせ</h2>
     </div>
-    <form class="form" action="contacts/confirm" method="post">
+    <form class="form" action="{{ url('/confirm') }}" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -35,7 +35,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--radio">
-                    <input type="radio" name="gender" id="male" value="1" {{ old('gender') == '1' ? 'checked' : '' }} checked>
+                    <input type="radio" name="gender" id="male" value="1" {{ old('gender') == '1' ? 'checked' : '' }}>
                     <label for="male">男性</label>
                     <input type="radio" name="gender" id="female" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>
                     <label for="female">女性</label>
@@ -78,6 +78,8 @@
                 </div>
                 <div class="form__error">
                     @error('tel1') {{ $message }} @enderror
+                    @error('tel2') {{ $message }} @enderror
+                    @error('tel3') {{ $message }} @enderror
                 </div>
             </div>
         </div>
@@ -90,6 +92,9 @@
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input type="text" name="address" placeholder="例：東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" />
+                </div>
+                <div class="form__error">
+                    @error('address') {{ $message }} @enderror
                 </div>
             </div>
         </div>
@@ -115,9 +120,14 @@
                     <select name="category_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                        <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>
+                            {{ $category['content'] }}
+                        </option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form__error">
+                    @error('category_id') {{ $message }} @enderror
                 </div>
             </div>
         </div>
@@ -129,7 +139,10 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                    <textarea name="content" placeholder="お問い合わせ内容をご記載ください">{{ old('content') }}</textarea>
+                    <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
+                </div>
+                <div class="form__error">
+                    @error('detail') {{ $message }} @enderror
                 </div>
             </div>
         </div>

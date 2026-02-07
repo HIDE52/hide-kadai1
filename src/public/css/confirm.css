@@ -62,29 +62,28 @@
 }
 
 .form__button {
-    margin-top: 30px;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.form__button-submit,
+.form__button-modify {
+    width: 160px;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background: #000;
+    background-color: #000;
     color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 10px;
 }
 
-.form__button-back-link {
-    color: #000;
+.form__button-modify {
+    background-color: #f4f4f4;
+    color: #333;
     text-decoration: underline;
-    cursor: pointer;
-    font-size: 14px;
 }

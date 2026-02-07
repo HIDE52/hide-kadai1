@@ -9,7 +9,7 @@
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
-    <?php print_r($contact['name']) ?>
+
     <form class="form" action="/thanks" method="post">
         @csrf
         <div class="confirm-table">
@@ -17,9 +17,9 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
-                        <span>{{ $contact['first_name'] }} {{ $contact['last_name'] }}</span>
-                        <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
+                        <span> {{ $contact['last_name'] }}&nbsp;{{ $contact['first_name'] }}</span>
                         <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
+                        <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
                     </td>
                 </tr>
 
@@ -46,6 +46,16 @@
                     <td class="confirm-table__text">
                         <span>{{ $contact['email'] }}</span>
                         <input type="hidden" name="email" value="{{ $contact['email'] }}">
+                    </td>
+                </tr>
+
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">電話番号</th>
+                    <td class="confirm-table__text">
+                        <span>{{ $contact['tel1'] }}{{ $contact['tel2'] }}{{ $contact['tel3'] }}</span>
+                        <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}">
+                        <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}">
+                        <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}">
                     </td>
                 </tr>
 
@@ -91,6 +101,7 @@
         </div>
         <div class="form__button">
             <button class="form__button-submit" type="submit">送信</button>
+            <button class="form__button-modify" type="button" onclick="history.back()">修正</button>
         </div>
     </form>
     </form>

@@ -16,12 +16,10 @@
 .header-center,
 .header-right {
     flex: 1;
-    /* 1:1:1の比率で幅を分け合う */
 }
 
 .header-center {
     text-align: center;
-    /* 中身のロゴを中央寄せ */
 }
 
 .header__logo {
@@ -34,7 +32,6 @@
 .header-right {
     display: flex;
     justify-content: flex-end;
-    /* 中身のメニューを右寄せ */
 }
 
 .header-nav {
