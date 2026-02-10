@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contact; // Contactモデルを使えるようにする
+use App\Models\Contact;
+use App\Models\Category;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        // 1. データベースから全てのデータを取ってくる
-        $contacts = Contact::all();
+        $contacts = Contact::with('category')->paginate(7);
 
-        // 2. admin.blade.php を表示する（その際、$contacts を渡す）
-        return view('admin', compact('contacts'));
+        $categories = Category::all();
+
+        return view('admin', compact('contacts', 'categories'));
     }
 }

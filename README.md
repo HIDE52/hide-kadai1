@@ -68,6 +68,8 @@ DB_PASSWORD=laravel_pass
 
 ④ セキュリティに必要な「鍵」を作ります。
 
+php artisan key:generate
+
 ```
 PHPコンテナ上
 

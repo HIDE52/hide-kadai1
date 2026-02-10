@@ -9,7 +9,7 @@
     <div class="FashionablyLate__heading">
         <h2>お問い合わせ</h2>
     </div>
-    <form class="form" action="{{ url('/confirm') }}" method="post">
+    <form class="form" action="{{ url('/confirm') }}" method="post" novalidate>
         @csrf
         <div class="form__group">
             <div class="form__group-title">
