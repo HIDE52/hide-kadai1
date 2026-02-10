@@ -52,49 +52,4 @@
     </main>
 </body>
 
-</html>rel="stylesheet" href="{{ asset('css/common.css') }}" />
-    @yield('css')
-</head>
-
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <div class="header-left"></div>
-
-            <div class="header-center">
-                <a class="header__logo" href="/">
-                    FashionablyLate
-                </a>
-            </div>
-
-            <div class="header-right">
-                <nav class="header-nav">
-                    <ul class="header-link">
-                        @if (Auth::check())
-                        <li class="header-nav__item">
-                            <form action="/logout" method="post">
-                                @csrf
-                                <button class="header-nav__button" type="submit">logout</button>
-                            </form>
-                        </li>
-                        @elseif (Request::is('login'))
-                        <li class="header-nav__item">
-                            <a class="header-nav__link" href="/register">register</a>
-                        </li>
-                        @elseif (Request::is('register'))
-                        <li class="header-nav__item">
-                            <a class="header-nav__link" href="/login">login</a>
-                        </li>
-                        @endif
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        @yield('content')
-    </main>
-</body>
-
 </html>
