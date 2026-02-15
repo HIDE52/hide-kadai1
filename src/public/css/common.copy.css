@@ -1,0 +1,147 @@
+html,
+body {
+    height: 100%;
+}
+
+body,
+textarea,
+input {
+    color: #8B7969;
+    margin: 0;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: #BEB1A6;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border: 1px solid #E0DFDE;
+    text-align: center;
+    font-family: serif;
+}
+
+.header__heading {
+    font-weight: lighter;
+    font-size: 24px;
+    margin: 0;
+}
+
+.header__link {
+    width: 80px;
+    margin-top: 10px;
+    border: 1px solid #D9C6B5;
+    background-color: #F0F0F0;
+    color: #D9C6B5;
+    text-decoration: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content__heading {
+    text-align: center;
+    font-weight: 100;
+    font-size: 24px;
+    font-family: serif;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background-color: #82756A;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li:not(.active) {
+    border: 1px solid #E0DFDE;
+    padding: 4px 12px;
+}
+
+.pagination li:not(:last-child) {
+    border-right: none;
+}
+
+.pagination a {
+    color: #8B7969;
+    text-decoration: none;
+}
+
+.active {
+    padding: 4px 12px;
+    border: 1px solid #8B7969;
+    background-color: #8B7969;
+    color: #FFF;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        height: 80px;
+        padding: 16px 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .header__heading {
+        font-size: 32px;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    .btn {
+        width: auto;
+        padding: 8px 32px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header__heading {
+        grid-column: 2;
+    }
+
+    .header__link {
+        grid-column: 3;
+        margin: 0 auto;
+    }
+
+    .content {
+        padding: 48px;
+    }
+
+    .content__heading {
+        font-size: 32px;
+    }
+}

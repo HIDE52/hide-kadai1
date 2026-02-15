@@ -63,14 +63,17 @@
                     <td class="admin__table-item">{{ $contact->email }}</td>
                     <td class="admin__table-item">{{ $contact->category->content }}</td>
                     <td class="admin__table-item">
+                        {{-- ★修正点1：onclickを追加して、この連絡先のIDを渡すようにしました --}}
                         <button class="detail-button" onclick="openModal({{ $contact->id }})">詳細</button>
 
                         <div id="modal-{{ $contact->id }}" class="modal">
                             <div class="modal__content">
                                 <div class="modal__header">
+                                    {{-- ★修正点2：閉じるボタンにもIDを渡します --}}
                                     <button class="modal__close-button" onclick="closeModal({{ $contact->id }})">×</button>
                                 </div>
                                 <div class="modal__body">
+                                    {{-- ② 全項目の表示 --}}
                                     <table class="modal__table">
                                         <tr>
                                             <th>お名前</th>
@@ -105,7 +108,7 @@
                                             <td>{{ $contact->detail }}</td>
                                         </tr>
                                     </table>
-
+                                    {{-- ③ 削除ボタン --}}
                                     <form class="delete-form" action="/admin/delete" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $contact->id }}">
@@ -125,10 +128,12 @@
 {{-- ★修正点3：@endsectionの直前に、<script>タグで囲んで記述します --}}
 <script>
     function openModal(id) {
+        // 対象のIDを持つモーダルを探して、表示を 'flex' に切り替えます
         document.getElementById('modal-' + id).style.display = 'flex';
     }
 
     function closeModal(id) {
+        // 対象のIDを持つモーダルを探して、表示を 'none'（非表示）に戻します
         document.getElementById('modal-' + id).style.display = 'none';
     }
 
