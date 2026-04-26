@@ -11,24 +11,23 @@
             <h2 class="admin__title">Admin</h2>
         </div>
 
-        {{-- 検索フォーム（省略：変更なし） --}}
         <div class="search-form__container">
             <form class="search-form" action="/admin/search" method="get">
                 @csrf
                 <input class="search-form__item-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
                 <select class="search-form__item-select" name="gender">
                     <option value="" selected disabled>性別</option>
-                    <option value="1">男性</option>
-                    <option value="2">女性</option>
-                    <option value="3">その他</option>
+                    <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
+                    <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
+                    <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
                 </select>
                 <select class="search-form__item-select category-select" name="category_id">
                     <option value="" selected disabled>お問い合わせの種類</option>
                     @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->content }}</option>
+                    <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
                     @endforeach
                 </select>
-                <input class="search-form__item-date" type="date" name="date">
+                <input class="search-form__item-date" type="date" name="date" value="{{ request('date') }}">
                 <button class="search-form__button-submit" type="submit">検索</button>
                 <button class="search-form__button-reset" type="button" onclick="location.href='/admin'">リセット</button>
             </form>
@@ -36,7 +35,9 @@
 
         <div class="admin__actions">
             <div class="admin__export">
-                <button class="export-button">エクスポート</button>
+                <a href="{{ url('/admin/export') . '?' . http_build_query(request()->query()) }}" class="export-button">
+                    エクスポート
+                </a>
             </div>
             <div class="admin__pagination">
                 {{ $contacts->appends(request()->query())->links() }}
@@ -122,7 +123,6 @@
     </div>
 </div>
 
-{{-- ★修正点3：@endsectionの直前に、<script>タグで囲んで記述します --}}
 <script>
     function openModal(id) {
         document.getElementById('modal-' + id).style.display = 'flex';
@@ -132,7 +132,6 @@
         document.getElementById('modal-' + id).style.display = 'none';
     }
 
-    // モーダルの外側をクリックしたときにも閉じるようにしたい場合は以下を追加（任意）
     window.onclick = function(event) {
         if (event.target.className === 'modal') {
             event.target.style.display = 'none';
